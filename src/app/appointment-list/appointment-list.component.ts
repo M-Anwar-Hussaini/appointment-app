@@ -13,6 +13,7 @@ export class AppointmentListComponent {
   newAppointmentTitle: string = '';
   newAppointmentDate: Date = new Date();
   appointments: Appointment[] = [];
+
   addAppointment() {
     this.appointments.push({
       date: this.newAppointmentDate,
@@ -22,5 +23,9 @@ export class AppointmentListComponent {
     this.newAppointmentTitle = '';
     this.newAppointmentDate = new Date();
     console.log(this.appointments);
+  }
+
+  deleteAppointment(id: number) {
+    this.appointments = this.appointments.filter((app) => app.id !== id);
   }
 }

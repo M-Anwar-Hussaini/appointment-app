@@ -1,7 +1,18 @@
 <input [(ngModel)]="newAppointmentTitle" placeholder="The title" />
 <input [(ngModel)]="newAppointmentDate" type="date" />
-<button (click)="addAppointment()">Add</button>
+<button (click)="addAppointment()" class="btn-success">Add</button>
 
 <ul>
-  <li *ngFor="let app of appointments">{{ app.title }}</li>
+  <li class="flex gap-3 border mt-4 p-2">
+    <p class="flex-grow-0 me-3">ID</p>
+    <p class="flex-grow">Title</p>
+    <p class="flex-grow">Date</p>
+    <p class="flex-grow">Action</p>
+  </li>
+  <li *ngFor="let app of appointments" class="flex gap-3 border mt-4 p-2">
+    <p class="flex-grow-0 me-3">Title: {{ app.id }}</p>
+    <p class="flex-grow">Title: {{ app.title }}</p>
+    <p class="flex-grow">Date: {{ app.date }}</p>
+    <button (click)="deleteAppointment(app.id)">Delete</button>
+  </li>
 </ul>

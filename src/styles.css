@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply max-w-2xl mx-auto pt-12;
+}
+
+input {
+  @apply block w-full border px-4 py-2 rounded my-2;
+}
+
+button {
+  @apply border px-5 py-1 transition-all hover:bg-rose-700 rounded bg-rose-400 text-slate-700;
+}
+
+.btn-success {
+  @apply bg-teal-500 hover:bg-teal-700 text-white;
+}
