@@ -7,7 +7,6 @@ import { AppointmentListComponent } from './appointment-list/appointment-list.co
   standalone: true,
   imports: [RouterOutlet, AppointmentListComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'appointment-app';

@@ -1,6 +1,7 @@
-<h1>First Appointment</h1>
-<div>
-  <p>Appointment ID: {{ appointment.id }}</p>
-  <p>Appointment title: {{ appointment.title }}</p>
-  <p>Appointment date: {{ appointment.date.toLocaleDateString() }}</p>
-</div>
+<input [(ngModel)]="newAppointmentTitle" placeholder="The title" />
+<input [(ngModel)]="newAppointmentDate" type="date" />
+<button (click)="addAppointment()">Add</button>
+
+<ul>
+  <li *ngFor="let app of appointments">{{ app.title }}</li>
+</ul>

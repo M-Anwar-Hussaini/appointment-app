@@ -1,17 +1,26 @@
 import { Component } from '@angular/core';
 import { Appointment } from '../models/appointment';
+import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-appointment-list',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, NgFor],
   templateUrl: './appointment-list.component.html',
-  styleUrl: './appointment-list.component.css',
 })
 export class AppointmentListComponent {
-  appointment: Appointment = {
-    id: 1,
-    title: 'Dentist',
-    date: new Date(),
-  };
+  newAppointmentTitle: string = '';
+  newAppointmentDate: Date = new Date();
+  appointments: Appointment[] = [];
+  addAppointment() {
+    this.appointments.push({
+      date: this.newAppointmentDate,
+      id: this.appointments.length + 1,
+      title: this.newAppointmentTitle,
+    });
+    this.newAppointmentTitle = '';
+    this.newAppointmentDate = new Date();
+    console.log(this.appointments);
+  }
 }
